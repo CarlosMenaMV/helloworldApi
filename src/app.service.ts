@@ -1,7 +1,7 @@
-import { BadRequestException, Injectable } from '@nestjs/common';
-import * as csvParser from 'csv-parser';
-import * as fs from 'fs';
-import { ConfigService } from './config/config.service';
+import { BadRequestException, Injectable } from "@nestjs/common";
+import * as csvParser from "csv-parser";
+import * as fs from "fs";
+import { ConfigService } from "./config/config.service";
 
 class Person {
   name: string;
@@ -14,8 +14,8 @@ export class AppService {
 
   async getHello() {
     const rows = (await this.readCSV()) as Person[];
-    if (rows.length === 0) return '<h1>No hay personas para saludar :(</h1>';
-    let message = '<h1>¡Hola!Aquí tienes la lista de personas:</h1>';
+    if (rows.length === 0) return "<h1>No hay personas para saludar :(</h1>";
+    let message = "<h1>¡Hola!Aquí tienes la lista de personas:</h1>";
 
     rows.forEach((row: Person) => {
       message += `</br>- Nombre: ${row.name}, Edad: ${row.age}\n`;
@@ -29,10 +29,10 @@ export class AppService {
       const stream = fs.createReadStream(this.config.getPath().path);
       stream
         .pipe(csvParser())
-        .on('data', (data) => results.push(data))
-        .on('end', () => resolve(results));
+        .on("data", (data) => results.push(data))
+        .on("end", () => resolve(results));
 
-      stream.on('error', (error: any) => {
+      stream.on("error", (error: any) => {
         resolve([]);
       });
     });
