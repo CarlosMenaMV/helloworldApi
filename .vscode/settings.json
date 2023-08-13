@@ -1,0 +1,6 @@
+{
+  "yaml.schemas": {
+    "file:///Users/carlosmena/.vscode/extensions/atlassian.atlascode-3.0.2/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml",
+    "https://json.schemastore.org/kustomization.json": "file:///Users/carlosmena/Documents/Bootcamp%20Devops/Desaf%C3%ADo%209/test-api/deploy.yaml"
+  }
+}
