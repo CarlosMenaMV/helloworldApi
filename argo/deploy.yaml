@@ -71,7 +71,7 @@ kind: Service
 metadata:
   name: hello-api-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: hello-api
   ports:
